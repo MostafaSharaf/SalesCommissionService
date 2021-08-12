@@ -1,6 +1,6 @@
 ---
 applications:
-- name: sales-commm-calc
+- name: sales_comm_calc
   memory: 128m
   instances: 1
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
