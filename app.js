@@ -25,8 +25,7 @@ function getHTTPPostData() {
     res.write('{"CommSales calc thru POST request": "' + sc.mySalesCommission(postSalesAmount) + '"} \n');
     res.end();
   });
-
-  /*
+/*
   app.listen(8000, function()
   {
     console.log("server is running on port: 8000");
