@@ -8,24 +8,32 @@ var sc = require('./SalesCommissionModule');
 const express = require('express'),
 app = express();
 ////
-function getHTTPPostData() {
+function getHTTPPostData(prt) {
   app.use(
     express.urlencoded({
       extended: true
     })
   );
   //
+  app.use(express.json())
+  //
   app.post('/SalesCommission', (req, res) => {
-    console.log('post body: ' + req.body.sales);
+    var postSalesAmount = req.body.sales;
+    console.log('post body sales amount: ' + postSalesAmount);
+    //
+    res.write('{"CommSales calc thru POST request": "' + sc.mySalesCommission(postSalesAmount) + '"} \n');
     res.end();
   });
 
-  app.listen(3000, function(){
-    console.log("server is running on port 3000");
+  app.listen(prt, function(){
+    console.log("server is running on port: " + prt);
   });
 }
 //
-http.createServer(function (req, res){
+getHTTPPostData(8000);
+//
+//
+/*http.createServer(function (req, res){
   res.writeHead(200, {'Content-Type': 'application/json'});
   //
   var q = url.parse(req.url, true).query;
@@ -54,5 +62,5 @@ http.createServer(function (req, res){
     subject: 'Sending Email using Node.js',
     text: 'That was easy!'
   };
- // sendMyEmail(mailOptions);
-}).listen(8000);
+  //email.sendMyEmail(mailOptions);
+}).listen(8000);*/
