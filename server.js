@@ -7,7 +7,9 @@ var sc = require('./SalesCommissionModule');
 const express = require('express'),
 app = express();
 ////
-function getHTTPPostData(prt) {
+getHTTPPostData();
+////
+function getHTTPPostData() {
   app.use(
     express.urlencoded({
       extended: true
@@ -24,13 +26,13 @@ function getHTTPPostData(prt) {
     res.end();
   });
 
-  app.listen(prt, function(){
-    console.log("server is running on port: " + prt);
+  /*
+  app.listen(8000, function()
+  {
+    console.log("server is running on port: 8000");
   });
+  */
 }
-//
-getHTTPPostData(8000);
-//
 //
 /*http.createServer(function (req, res){
   res.writeHead(200, {'Content-Type': 'application/json'});
