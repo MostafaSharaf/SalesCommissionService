@@ -16,7 +16,7 @@
         "12",
         "factor"
     ],
-    "author": "@@Mosty",
+    "author": "@Mosty",
     "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/MostafaSharaf/SalesCommissionService/issues"
@@ -28,7 +28,8 @@
         "express": "^4",
         "loader": "^2.1.1",
         "nodemailer": "^6",
-        "pg": "^8.6.0"
+        "pg": "^8.6.0",
+        "sqlite3": "^5.0.2"
     },
     "engines": {
         "node": "^14"
