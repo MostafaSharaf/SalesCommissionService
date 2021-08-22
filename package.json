@@ -1,37 +1,38 @@
 {
     "name": "sales-commission-service",
     "version": "1.0.0",
-    "description": "sales Commission Calc Service",
-    "private": true,
+    "description": "An example of Commission Sales Caluclator Service",
     "main": "app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node app.js"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node app.js"
     },
     "repository": {
-        "type": "git",
-        "url": "https://github.com/MostafaSharaf/SalesCommissionService"
+      "type": "git",
+      "url": "git+https://github.com/MostafaSharaf/SalesCommissionService.git"
     },
     "keywords": [
-        "12",
-        "factor"
+      "SalesComm",
+      "Service",
+      "@Mosty"
     ],
     "author": "@Mosty",
     "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/MostafaSharaf/SalesCommissionService/issues"
+      "url": "https://github.com/MostafaSharaf/SalesCommissionService/issues"
     },
     "homepage": "https://github.com/MostafaSharaf/SalesCommissionService#readme",
     "//": "II Dependencies - Explicitly declare and isolate dependencies",
     "dependencies": {
-        "axios": "^0.21.1",
-        "express": "^4",
-        "loader": "^2.1.1",
-        "nodemailer": "^6",
-        "pg": "^8.6.0",
-        "sqlite3": "^5.0.2"
+      "axios": "^0.21.1",
+      "express": "^4",
+      "loader": "^2.1.1",
+      "nodemailer": "^6",
+      "pg": "^8.6.0",
+      "sqlite3": "^5.0.2"
     },
     "engines": {
-        "node": "^14"
-    }
-}
+        "node": ">=14",
+        "npm": ">=2"
+      }
+  }

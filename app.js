@@ -1,9 +1,9 @@
 ////
-var http = require('http');
-var url = require('url');
-var email = require('./EmailModule');
+//var http = require('http');
+//var url = require('url');
+//var email = require('./EmailModule');
 var sc = require('./SalesCommissionModule');
-////
+const port = process.env.PORT;
 const express = require('express'),
 app = express();
 ////
@@ -22,18 +22,18 @@ function getHTTPPostData() {
     var postSalesAmount = req.body.sales;
     console.log('post body sales amount: ' + postSalesAmount);
     //
-    res.write('{"CommSales calc thru POST request": "' + sc.mySalesCommission(postSalesAmount) + '"} \n');
+    res.write('{"commAmount" : "' + sc.mySalesCommission(postSalesAmount) + '"}');
     res.end();
   });
-/*
-  app.listen(8000, function()
-  {
-    console.log("server is running on port: 8000");
+
+  app.listen(port || 3000, () => {
+    console.log('Server is running on http://localhost: ${port}');
   });
-  */
 }
-//
-/*http.createServer(function (req, res){
+////
+////
+/*
+http.createServer(function (req, res){
   res.writeHead(200, {'Content-Type': 'application/json'});
   //
   var q = url.parse(req.url, true).query;
@@ -46,8 +46,6 @@ function getHTTPPostData() {
   req.on('data', chunk => {
     data += chunk;
   });
-  //
-  getHTTPPostData();
   //
   req.on('end', () => {
     postSalesAmount = JSON.parse(data).sales;
@@ -63,4 +61,5 @@ function getHTTPPostData() {
     text: 'That was easy!'
   };
   //email.sendMyEmail(mailOptions);
-}).listen(8000);*/
+}).listen(port || 3000);
+*/
